@@ -7,7 +7,7 @@ botoes.forEach(botao => {
 function filtrarLivros(event){
     botaoSelecionado = event.target.value;
     console.log(botaoSelecionado);
-    let livrosFiltrados = livros.filter(livro => livro.categoria == botaoSelecionado)
+    let livrosFiltrados = botaoSelecionado = 'disponivel'? livros.filter(livro=> livro.quantidade>0) : livros.filter(livro => livro.categoria == botaoSelecionado);
     elementoParaInserirLivros.innerHTML = '';
     exibeLivrosNaTela(livrosFiltrados);
 }
