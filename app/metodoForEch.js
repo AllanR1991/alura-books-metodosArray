@@ -2,6 +2,7 @@ const elementoParaInserirLivros = document.getElementById('livros');
 
 function exibeLivrosNaTela(listaDeLivos) {
     listaDeLivos.forEach(livro => {
+        
         const divLivro = document.createElement('div');
         divLivro.classList.add('livro');
 
@@ -9,6 +10,10 @@ function exibeLivrosNaTela(listaDeLivos) {
         imagemLivro.classList.add('livro__imagens');
         imagemLivro.setAttribute('src', livro.imagem);
         imagemLivro.setAttribute('alt', livro.alt);
+        
+        livro.quantidade>0?
+            imagemLivro.classList.remove('indisponivel'):
+            imagemLivro.classList.add('indisponivel');
 
         const tituloLivro = document.createElement('h2');
         tituloLivro.classList.add('livro__titulo');
