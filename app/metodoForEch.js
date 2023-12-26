@@ -1,6 +1,9 @@
 const elementoParaInserirLivros = document.getElementById('livros');
+const elementoComValorTotalLivrosDisponiveis = document.getElementById('valor_total_livros_disponiveis')
 
 function exibeLivrosNaTela(listaDeLivos) {
+    elementoComValorTotalLivrosDisponiveis.innerHTML = '';
+
     listaDeLivos.forEach(livro => {
         
         const divLivro = document.createElement('div');
@@ -26,7 +29,7 @@ function exibeLivrosNaTela(listaDeLivos) {
         const paragrafoPreco = document.createElement('p');
         paragrafoPreco.classList.add('livro__preco');
         paragrafoPreco.setAttribute('id', 'preco');
-        paragrafoPreco.textContent = livro.preco.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'});;
+        paragrafoPreco.textContent = livro.preco.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'});
 
         const divTag = document.createElement('div');
         divTag.classList.add('tags');
